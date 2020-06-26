@@ -1,0 +1,26 @@
+<div class="container p-5">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Hit Point</th>
+                <th scope="col">Rarity</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% unless @pokemon_cards.empty? %>
+            <% @pokemon_cards.each do |card| %>
+            <tr>
+                <td><%= card.name %></td>
+                <td><%= card.hp %></td>
+                <td><%= card.rarity %></td>
+            </tr>
+            <% end %>
+        <% else %>
+            <tr>
+            <td >No cards found</td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>

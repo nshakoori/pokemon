@@ -1,0 +1,13 @@
+<div class="container p-2">
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Pokemon Cards</a>
+    <%= button_to "Create Backup", pokemon_cards_path, remote: true%>
+    <%= button_to "Purge Backup", pokemon_cards_delete_all_path, remote: true, method: :post %>
+   
+    <%= form_tag pokemon_cards_backups_path, method: :get, if: 'serach_form' do %>
+        <%= text_field_tag :card%>
+        <%= submit_tag 'Search'%>
+    <% end %>
+    </form>
+    </nav>
+</div>
